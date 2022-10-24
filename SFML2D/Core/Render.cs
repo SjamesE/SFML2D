@@ -21,7 +21,7 @@ namespace SFML2D.Core
 
             foreach (GameObject obj in objects)
             {
-                obj.GetComponent<Renderer>().Render(window);
+                obj.GetComponent<SpriteRenderer>().Render(window);
             }
             foreach (UIObject obj in uiObjects)
             {

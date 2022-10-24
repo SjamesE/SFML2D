@@ -3,12 +3,13 @@ using SFML.System;
 
 namespace SFML2D.Core
 {
-    internal class Renderer : Component
+    internal class SpriteRenderer : Component
     {
-        public Texture texture { get; private set; }
+        public Texture texture { get; set; }
         public Sprite Sprite { get; private set; }
+        public Color Color { get; set; }
 
-        public Renderer(GameObject gameObject, Texture texture) : base(gameObject)
+        public SpriteRenderer(GameObject gameObject, Texture texture) : base(gameObject)
         {
             this.texture = texture;
 
@@ -25,6 +26,7 @@ namespace SFML2D.Core
             Sprite.Position = new Vector2f(transform.pos.x, transform.pos.y);
             Sprite.Scale = new Vector2f(transform.scale.x, transform.scale.y);
             Sprite.Rotation = transform.rotation;
+            Sprite.Color = Color;
             window.Draw(Sprite);
         }
     }
