@@ -68,6 +68,7 @@ namespace SFML2D.Core.UI
             sprite = new Sprite();
             texture = new Texture((uint)transform.size.x, (uint)transform.size.y);
 
+            drawable = true;
             this.color = color;
             this.rounding = rounding;
             this.borderSize = borderSize;
@@ -161,7 +162,7 @@ namespace SFML2D.Core.UI
             update = false;
         }
 
-        public void Draw(RenderWindow window)
+        public override void Draw(RenderWindow window)
         {
             if (update) Update();
 

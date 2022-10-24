@@ -25,6 +25,17 @@ namespace SFML2D.Core.UI
             isActive = true;
             transform = new RectTransform(window, pos, size);
         }
+
+        public void Draw(RenderWindow window)
+        {
+            foreach (UIComponent component in components)
+            {
+                if (component.drawable)
+                {
+                    component.Draw(window);
+                }
+            }
+        }
         
         public void AddComponent(UIComponent component)
         {

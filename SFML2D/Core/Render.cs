@@ -25,8 +25,7 @@ namespace SFML2D.Core
             }
             foreach (UIObject obj in uiObjects)
             {
-                obj.GetComponent<Panel>().Draw(window);
-                obj.GetComponent<Button>().Draw(window);
+                obj.Draw(window);
             }
 
             window.Display();

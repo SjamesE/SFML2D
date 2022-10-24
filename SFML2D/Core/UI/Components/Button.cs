@@ -56,6 +56,7 @@ namespace SFML2D.Core.UI
             font = new Font(path);
             text = new Text(displayedString, font);
 
+            drawable = true;
             this.fontColor = fontColor;
             this.displayedString = displayedString;
             this.fontSize = fontSize;
@@ -72,7 +73,7 @@ namespace SFML2D.Core.UI
             update = false;
         }
 
-        public void Draw(RenderWindow window)
+        public override void Draw(RenderWindow window)
         {
             if (update) Update();
 
