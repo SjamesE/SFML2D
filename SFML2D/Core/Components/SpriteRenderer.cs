@@ -1,5 +1,6 @@
 ﻿using SFML.Graphics;
 using SFML.System;
+using SFML2D.Generics;
 
 namespace SFML2D.Core
 {
@@ -21,9 +22,9 @@ namespace SFML2D.Core
             Sprite.Texture = texture;
         }
 
-        public void Render(RenderWindow window)
+        public void Render(RenderWindow window, Vector2 offset)
         {
-            Sprite.Position = new Vector2f(transform.pos.x, transform.pos.y);
+            Sprite.Position = new Vector2f(transform.pos.x - offset.x, transform.pos.y - offset.y);
             Sprite.Scale = new Vector2f(transform.scale.x, transform.scale.y);
             Sprite.Rotation = transform.rotation;
             Sprite.Color = Color;

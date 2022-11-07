@@ -1,4 +1,5 @@
-﻿using SFML2D.Core.UI;
+﻿using SFML.Graphics;
+using SFML2D.Core.UI;
 
 namespace SFML2D.Core
 {
@@ -8,13 +9,15 @@ namespace SFML2D.Core
         public int sceneIndex { get; private set; }
         public List<GameObject> gameObjects { get; private set; }
         public List<UIObject> uiObjects { get; set; }
+        public Camera mainCamera { get; private set; }
 
-        public Scene(string name, int index)
+        public Scene(RenderWindow window, string name, int index)
         {
             this.name = name;
             sceneIndex = index;
             gameObjects = new List<GameObject>();
             uiObjects = new List<UIObject>();
+            mainCamera = new Camera(window);
         }
 
         public void AddGameObject(GameObject gameObject)

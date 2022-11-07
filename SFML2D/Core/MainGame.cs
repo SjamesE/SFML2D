@@ -8,6 +8,7 @@ namespace SFML2D.Core
         public override void Initialize(RenderWindow window)
         {
             MainMenu mainMenu = new MainMenu(window);
+            SceneManager.Window = window;
             SceneManager.ChangeActiveScene(mainMenu.sceneIndex);
         }
 

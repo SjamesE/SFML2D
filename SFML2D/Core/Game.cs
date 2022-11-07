@@ -9,18 +9,16 @@ namespace SFML2D.Core
         static readonly int TARGET_FPS = 60;
         static readonly float FRAME_TIME = 1f / TARGET_FPS;
 
-        uint WINDOW_HEIGHT = 600;
-        uint WINDOW_WIDTH = 800;
+        public uint WINDOW_HEIGHT = 600;
+        public uint WINDOW_WIDTH = 800;
 
-        RenderWindow window;
+        protected RenderWindow window;
         protected Render renderer;
 
         public Game()
         {
             var settings = new ContextSettings();
             settings.AntialiasingLevel = 8;
-            settings.StencilBits = 8;
-            settings.DepthBits = 8;
             window = new RenderWindow(new VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), " ", Styles.Titlebar | Styles.Close, settings);
             renderer = new Render(window);
             window.Closed += Window_Closed;
